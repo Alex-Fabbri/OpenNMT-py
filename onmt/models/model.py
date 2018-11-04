@@ -44,6 +44,7 @@ class NMTModel(nn.Module):
         enc_final, memory_bank, lengths = self.encoder(src, lengths)
         enc_state = \
             self.decoder.init_decoder_state(src, memory_bank, enc_final)
+        import pdb;pdb.set_trace()
         decoder_outputs, dec_state, attns = \
             self.decoder(tgt, memory_bank,
                          enc_state if dec_state is None

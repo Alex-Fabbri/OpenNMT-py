@@ -231,6 +231,7 @@ def build_base_model(model_opt, fields, gpu, checkpoint=None):
         if model_opt.share_decoder_embeddings:
             generator[0].weight = decoder.embeddings.word_lut.weight
     else:
+        import pdb;pdb.set_trace()
         generator = CopyGenerator(model_opt.dec_rnn_size,
                                   fields["tgt"].vocab)
 

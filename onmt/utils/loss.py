@@ -23,6 +23,7 @@ def build_loss_compute(model, tgt_vocab, opt, train=True):
     device = torch.device("cuda" if onmt.utils.misc.use_gpu(opt) else "cpu")
 
     if opt.copy_attn:
+        import pdb;pdb.set_trace()
         compute = onmt.modules.CopyGeneratorLossCompute(
             model.generator, tgt_vocab, opt.copy_attn_force,
             opt.copy_loss_by_seqlength)

@@ -281,6 +281,7 @@ class Trainer(object):
                 # 2. F-prop all but generator.
                 if self.grad_accum_count == 1:
                     self.model.zero_grad()
+                import pdb;pdb.set_trace()
                 outputs, attns, dec_state = \
                     self.model(src, tgt, src_lengths, dec_state)
 

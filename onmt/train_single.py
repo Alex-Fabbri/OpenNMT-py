@@ -137,6 +137,7 @@ def main(opt, device_id):
         lazily_load_dataset("valid", opt), fields, opt, is_train=False)
 
     # Do training.
+    import pdb;pdb.set_trace()
     trainer.train(train_iter_fct, valid_iter_fct, opt.train_steps,
                   opt.valid_steps)
 

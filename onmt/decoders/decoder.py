@@ -297,6 +297,7 @@ class InputFeedRNNDecoder(RNNDecoderBase):
         See StdRNNDecoder._run_forward_pass() for description
         of arguments and return values.
         """
+        import pdb;pdb.set_trace()
         # Additional args check.
         input_feed = state.input_feed.squeeze(0)
         input_feed_batch, _ = input_feed.size()

@@ -1,0 +1,9 @@
+python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/cnndm -src_seq_length 10000 -tgt_seq_length 10000 -src_seq_length_trunc 400 -tgt_seq_length_trunc 100 -dynamic_dict -share_vocab
+
+
+
+python train.py -save_model models/cnndm -data data/cnndm -copy_attn -global_attention mlp -word_vec_size 128 -rnn_size 512 -layers 1 -encoder_type brnn -max_grad_norm 2 -dropout 0. -batch_size 16 -optim adagrad -learning_rate 0.15 -adagrad_accumulator_init 0.1 -reuse_copy_attn -copy_loss_by_seqlength -bridge -seed 777 
+
+
+ /gpfs/loomis/project/fas/radev/af726/examples/OpenNMT-py/onmt/modules/copy_generator.py(164)_make_shard_state()
+

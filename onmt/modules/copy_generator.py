@@ -81,6 +81,7 @@ class CopyGenerator(nn.Module):
              its index in the "extended" vocab containing.
              `[src_len, batch, extra_words]`
         """
+        import pdb;pdb.set_trace()
         # CHECKS
         batch_by_tlen, _ = hidden.size()
         batch_by_tlen_, slen = attn.size()
@@ -172,6 +173,7 @@ class CopyGeneratorLossCompute(loss.LossComputeBase):
         }
 
     def _compute_loss(self, batch, output, target, copy_attn, align):
+        import pdb;pdb.set_trace()
         """
         Compute the loss. The args must match self._make_shard_state().
         Args:
